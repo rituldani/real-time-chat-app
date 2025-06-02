@@ -1,0 +1,23 @@
+.....Message Model.....
+
+Ankush(sender) ===> Hii Akhil
+Akhil(receiver)
+
+_id=0*12345 (generated bu mongoDB)
+senderId=662fdh4ey3r9vh9eh38uhcner
+receiverId=6529fevrbehwbd2rbfhwfeg
+message="Hii Akhil"
+
+Ahkil(sender) ===> Hii Ankush
+Ankush(receiver)
+
+_id=0*12346 (generated bu mongoDB)
+senderId=6529fevrbehwbd2rbfhwfeg
+senderId=662fdh4ey3r9vh9eh38uhcner
+message="Hii Ankush"
+
+.....Conversation Model.....
+
+members[senderId,senderId]
+message[_id=0*12345, _id=0*12346]
+

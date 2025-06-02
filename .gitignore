@@ -1,0 +1,42 @@
+# Ignore Node.js dependencies
+node_modules/
+
+# Ignore environment variables
+.env
+.env.local
+
+# Ignore build output
+dist/
+build/
+
+# Ignore logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore coverage results
+coverage/
+
+# Ignore IDE/editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore OS files
+*.log
+*.tmp
+
+
+# Frontend
+/client/node_modules/
+/client/build/
+/client/.env
+
+# Backend
+/server/node_modules/
+/server/.env

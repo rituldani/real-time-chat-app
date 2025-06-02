@@ -1,0 +1,4 @@
+@import 'tailwindcss';
+.flex-1::-webkit-scrollbar{
+    display: none;
+}
