@@ -14,8 +14,16 @@ import useConversation from '../../zustand/useConversation';
 function Left() {
   const [showProfile, setShowProfile] = useState(false)
   const [loading, setLoading] = useState(false)
-  const authUser = JSON.parse(localStorage.getItem("ChatApp"));
-  const username = authUser.user.fullname;
+  // const authUser = JSON.parse(localStorage.getItem("ChatApp"));
+  // const username = authUser.user.fullname || authUser.newUser.fullname;
+
+   const authUser = JSON.parse(localStorage.getItem("ChatApp"));
+
+  const user = authUser?.user || authUser?.newUser;
+
+  const username = user?.fullname;
+  const email = user?.email;
+
   const [search, setSearch] = useState("");
   const [allUsers] = useGetAllUsers();
   const { setSelectedConversation } = useConversation();
@@ -27,7 +35,7 @@ function Left() {
     }
     return Math.abs(hash) % 100; // Returns a number between 0-99
   };
-  const number = getUserAvatarNumber(authUser.user.email);
+  const number = getUserAvatarNumber(email);
   const gender = "women"; // or "women" or randomize based on your data
   const avatarUrl = `https://randomuser.me/api/portraits/${gender}/${number}.jpg`;
 

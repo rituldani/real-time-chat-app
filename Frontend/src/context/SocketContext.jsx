@@ -14,7 +14,7 @@ export const SocketProvider = ({ children }) => {
     const [authUser] = useAuth();
 
     useEffect(() => {
-        if (authUser) {
+        if (authUser?.user?._id) {
             const socket = io("http://localhost:3000", {
                 query: {
                     userId: authUser.user._id,
