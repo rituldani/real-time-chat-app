@@ -10,7 +10,7 @@ function useGetMessage() {
         const getMessage = async () => {
             setLoading(true);
             const token = localStorage.getItem("token");
-            // console.log(token)
+            console.log("Token received", token);
             if (selectedConversation && selectedConversation._id && token) {
                 try {
                     // console.log(selectedConversation._id)
