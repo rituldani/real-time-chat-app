@@ -10,13 +10,13 @@ function useGetAllUsers() {
         const getUsers = async () => {
             setLoading(true);
             try {
-                const token = Cookie.get("jwt");
-                console.log("Token from cookies:", token);
+                // const token = Cookie.get("jwt");
+                // console.log("Token from cookies:", token);
                 const response = await axios.get(`${import.meta.env.VITE_API_URL}/user/allUsers`, {
                     withCredentials: true, // ✅ correct
-                    headers: {
-                        Authorization: `Bearer ${token}` // ✅ send token in headers
-                    }
+                    // headers: {
+                    //     Authorization: `Bearer ${token}` // ✅ send token in headers
+                    // }
                 });
                 console.log("Sending token:", token);
                 setAllUsers(response.data);
