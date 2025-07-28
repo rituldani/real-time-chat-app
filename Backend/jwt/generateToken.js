@@ -5,12 +5,10 @@ const createTokenAndSaveCookie = (userId, res) => {
         expiresIn: "10d",
     } );
     res.cookie("jwt", token, {
-        httpOnly: true, // xss
-        // secure: true,
-        // secure: false, // for localhost development only
-        secure: process.env.NODE_ENV === "production",
-        sameSite: "strict", // crsf
-        maxAge: 10 * 24 * 60 * 60 * 1000 // 10 days
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production", // ✅ true on Vercel
+        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // ✅ allow cross-origin
+        maxAge: 10 * 24 * 60 * 60 * 1000,
     });
     return token;
     // res.status(200).json({
