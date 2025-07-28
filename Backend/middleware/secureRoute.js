@@ -39,7 +39,7 @@ const secureRoute = async (req, res, next) => {
             return res.status(401).json({ error: "No token, authorization denied" });
         }
 
-        const decode = jwt.verify(token, process.env.JWT_TOKEN);
+        const decode = jwt.verify(token, process.env.JWT_SECRET);
         if (!decode) {
             return res.status(401).json({ error: "Invalid Token" });
         }
