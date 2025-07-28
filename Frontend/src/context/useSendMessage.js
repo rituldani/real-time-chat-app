@@ -13,7 +13,7 @@ function useSendMessage() {
         // console.log(message)
         try {
             console.log(selectedConversation._id)
-            const res = await axios.post(`http://localhost:3000/message/send/${selectedConversation._id}`,
+            const res = await axios.post(`${import.meta.env.VITE_API_URL}/message/send/${selectedConversation._id}`,
                 {message},
                 {
                 headers: {
