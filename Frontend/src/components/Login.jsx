@@ -21,7 +21,7 @@ function Login() {
             password: data.password
         }
         try {
-            const response = await axios.post("http://localhost:3000/user/login", userInfo, {
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/user/login`, userInfo, {
                 withCredentials: true, // important to receive cookie!
             });
             console.log(response.data);
