@@ -52,47 +52,23 @@ This is a full-stack real-time chat application built with the **MERN stack** (M
 
 ---
 
-## 🛠️ Project Structure
-
-```
-root/
-├── client/             # React Frontend
-│   └── src/
-│       ├── components/
-│       ├── pages/
-│       ├── redux/      # Redux Toolkit store, slices
-│       └── utils/
-│
-├── server/             # Express Backend
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   └── utils/
-│
-├── .env                # Environment variables
-├── package.json        # Monorepo root
-```
-
----
-
 ## ⚙️ Setup Instructions
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/realtime-chat-app.git
-cd realtime-chat-app
+git clone https://github.com/rituldani/real-time-chat-app.git
+cd real-time-chat-app
 ```
 
 ### 2. Setup Backend
 
 ```bash
-cd server
+cd Backend
 npm install
 ```
 
-Create a `.env` file inside the `server/` folder:
+Create a `.env` file inside the `Backend/` folder:
 
 ```
 PORT=5000
@@ -110,14 +86,14 @@ npm run dev
 ### 3. Setup Frontend
 
 ```bash
-cd ../client
+cd ../Frontend
 npm install
 ```
 
-Create a `.env` file inside the `client/` folder:
+Create a `.env` file inside the `Frontend/` folder:
 
 ```
-VITE_API_URL=http://localhost:5000/api
+VITE_API_URL=http://localhost:5000
 ```
 
 Start the React app:
@@ -167,7 +143,7 @@ Install `concurrently` at root and add scripts to `package.json`.
 
 ## 🌍 Deployment
 
-* Backend: \[Render / Railway / Vercel (functions)]
+* Backend: \[Render / Railway ]
 * Frontend: \[Vercel / Netlify]
 
 Ensure proper CORS and cookie settings:
