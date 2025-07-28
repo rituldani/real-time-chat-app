@@ -5,8 +5,8 @@ const createTokenAndSaveCookie = (userId, res) => {
         expiresIn: "10d",
     } );
     res.cookie("jwt", token, {
-        // httpOnly: true,
-        httpOnly: false,
+        httpOnly: true,
+        // httpOnly: false,
         secure: process.env.NODE_ENV === "production", // ✅ true on Vercel
         sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // ✅ allow cross-origin
         maxAge: 10 * 24 * 60 * 60 * 1000,
