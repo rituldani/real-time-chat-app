@@ -19,20 +19,21 @@ const allowedOrigins = [
   "https://real-time-chat-app-git-main-ritul-danis-projects.vercel.app", // ✅ your Vercel frontend
 ];
 
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true, // if you're using cookies or authorization headers
-}));
 // app.use(cors({
-//   origin: "http://localhost:5173", // your React frontend URL
-//   credentials: true // allow cookies to be sent
+//   origin: function (origin, callback) {
+//     if (!origin || allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+//   credentials: true, // if you're using cookies or authorization headers
 // }));
+
+app.use(cors({
+  origin: allowedOrigins, // your React frontend URL
+  credentials: true // allow cookies to be sent
+}));
 
 
 const PORT = process.env.PORT || 30001
