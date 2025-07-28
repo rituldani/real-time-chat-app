@@ -13,7 +13,7 @@ function useGetMessage() {
             console.log("Token received", token);
             if (selectedConversation && selectedConversation._id && token) {
                 try {
-                    // console.log(selectedConversation._id)
+                    console.log("selectedConversation._id", selectedConversation._id)
                     const res = await axios.get(`${import.meta.env.VITE_API_URL}/message/get/${selectedConversation._id}`, {
                         headers: {
                             Authorization: `Bearer ${token}`,
