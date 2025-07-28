@@ -12,7 +12,7 @@ function useGetAllUsers() {
             try {
                 const token = Cookie.get("jwt");
                 // console.log("Token from cookies:", token);
-                const response = await axios.get("http://localhost:3000/user/allUsers", {
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/user/allUsers`, {
                     withCredentials: true, // ✅ correct
                     headers: {
                         Authorization: `Bearer ${token}` // ✅ send token in headers
