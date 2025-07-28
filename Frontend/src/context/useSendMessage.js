@@ -7,7 +7,7 @@ function useSendMessage() {
     const { messages, setMessages, selectedConversation } = useConversation();
     const sendMessage = async (message) => {
         setLoading(true);
-        const token = localStorage.getItem("token");
+        // const token = localStorage.getItem("token");
         // console.log(token)
         // console.log(messages)
         // console.log(message)
@@ -16,9 +16,10 @@ function useSendMessage() {
             const res = await axios.post(`${import.meta.env.VITE_API_URL}/message/send/${selectedConversation._id}`,
                 {message},
                 {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                }
+                // headers: {
+                //     Authorization: `Bearer ${token}`,
+                // }
+                  withCredentials: true // ✅ tells browser to send cookies
             });
             // console.log(res)
             console.log(res.data)
