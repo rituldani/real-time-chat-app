@@ -34,6 +34,7 @@ import User from "../models/user.model.js";
 const secureRoute = async (req, res, next) => {
     try {
         // const token = req.cookies.jwt;
+        console.log("ALL COOKIES:", req.cookies);
         const token = req.cookies.jwt || req.header("Authorization")?.replace("Bearer ", "");
         console.log("TOKEN RECEIVED:", token);
         if (!token) {
