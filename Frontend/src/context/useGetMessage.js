@@ -15,9 +15,10 @@ function useGetMessage() {
                 try {
                     console.log("selectedConversation._id", selectedConversation._id)
                     const res = await axios.get(`${import.meta.env.VITE_API_URL}/message/get/${selectedConversation._id}`, {
-                        headers: {
-                            Authorization: `Bearer ${token}`,
-                        }
+                        // headers: {
+                        //     Authorization: `Bearer ${token}`,
+                        // }                        
+                          withCredentials: true 
                     });
                     // console.log(res)
                     console.log(res.data)
