@@ -18,7 +18,7 @@ function useGetAllUsers() {
                         Authorization: `Bearer ${token}` // ✅ send token in headers
                     }
                 });
-                console.log("Sending token:", user.token);
+                console.log("Sending token:", token);
                 setAllUsers(response.data);
             } catch(error){
                 console.error("Error in getAllUsers:", error);
