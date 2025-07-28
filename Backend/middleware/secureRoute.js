@@ -51,11 +51,13 @@ const secureRoute = async (req, res, next) => {
         if (!decode) {
             return res.status(401).json({ error: "Invalid Token" });
         }
+        console.log(" token verified", decode);
 
         const user = await User.findById(decode.userId).select("-password");
         if (!user) {
             return res.status(401).json({ error: "No user found" });
         }
+        console.log("user found",user);
 
         req.user = user;
         next(); // Move to the next middleware or controller
